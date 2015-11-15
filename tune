@@ -1,0 +1,27 @@
+live_loop :flibble do
+  sample :bd_haus, rate: 1, amp: 3
+  sleep 1
+  play :G3, amp: 2
+  sleep 1
+end
+
+live_loop :drum do
+  sync :flibble
+  sample :ambi_glass_hum, rate: 2
+  sleep 1
+  sample :bd_haus, rate: 2, amp: 2
+  sleep 0.5
+  sample :guit_em9, rate: 2, amp: 4
+end
+live_loop :trumpet do
+  sync :drum
+  sample :drum_bass_hard, rate: 0.5, amp: 20
+  sleep 2
+  sample :bass_dnb_f, rate: 0.4, amp: 4
+  sleep 0.5
+end
+live_loop :guit do
+  sync :drum
+  sample :ambi_choir, rate: 1, amp: 3
+  sleep 1
+end
